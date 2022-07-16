@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { typesafeI18n } from '../i18n/i18n-vue'
 
 defineProps<{ msg: string }>()
 
+const { LL } = typesafeI18n()
 
+console.log(LL.value.STARTUP())
 
 const count = ref(0)
 </script>
@@ -12,6 +15,7 @@ const count = ref(0)
 	<h1>{{ msg }}</h1>
 
 	<p>
+		{{ LL.RECOMMENDED_SETUP() }}
 		<a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
 		+
 		<a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
@@ -25,8 +29,10 @@ const count = ref(0)
 		<a href="https://github.com/ivanhofer/typesafe-i18n" target="_blank">typesafe-i18n Docs</a>
 	</p>
 
-<button type="button" @click="count++">click me {{ count }}</button>
-	
+	<button type="button" @click="count++">{{ LL.COUNT({ count }) }}</button>
+	<p v-html="LL.EDIT({ component: 'components/HelloWorld.vue' })"></p>
+
+	<p>{{ LL.TODAY({ date: new Date() }) }}</p>
 </template>
 
 <style scoped>
