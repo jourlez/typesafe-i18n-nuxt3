@@ -2,11 +2,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import type { Locales } from './i18n/i18n-types'
-import { locales } from './i18n/i18n-util'
-import { loadLocaleAsync } from './i18n/i18n-util.async'
-import { typesafeI18n } from './i18n/i18n-vue'
+import HelloWorld from '~/components/HelloWorld.vue'
+import type { Locales } from '~~/i18n/i18n-types'
+import { locales } from '~~/i18n/i18n-util'
+import { loadLocaleAsync } from '~~/i18n/i18n-util.async'
+import { typesafeI18n } from '~~/i18n/i18n-vue'
 
 const { LL, locale, setLocale } = typesafeI18n()
 

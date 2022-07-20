@@ -1,7 +1,7 @@
 import { navigatorDetector } from 'typesafe-i18n/detectors'
+import { detectLocale } from './i18n/i18n-util'
 import { createApp } from 'vue'
 import App from './App.vue'
-import { detectLocale } from './i18n/i18n-util'
 import { loadLocaleAsync } from './i18n/i18n-util.async'
 import { i18nPlugin } from './i18n/i18n-vue'
 
